@@ -72,7 +72,7 @@ class stream_of_ticks(list):
         if len(self)==0:
             ## no data; do a blank tick
             print("nodata")
-            return tick(datetime.datetime.now()).as_pandas_row()
+            return tickObject(datetime.datetime.now()).as_pandas_row()
 
         pd_row_list=[tick.as_pandas_row() for tick in self]
         pd_data_frame=pd.concat(pd_row_list)
@@ -291,7 +291,7 @@ if __name__ == '__main__':
     ## Recording params
     ## Record from 7am - 4:10pm
     startTime = "07:00:00.0"
-    endTime = "23:59:00.0"#"16:10:00.0"
+    endTime = "16:10:00.0"
     ## Write data every x seconds
     logInterval = 5
     ## File name
